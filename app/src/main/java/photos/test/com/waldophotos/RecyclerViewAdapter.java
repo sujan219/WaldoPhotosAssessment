@@ -6,16 +6,11 @@ package photos.test.com.waldophotos;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-
-import java.util.List;
 
 import photos.test.com.service.PhotoLoader;
 
@@ -71,14 +66,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.onLoadMoreListener = onLoadMoreListener;
     }
 
-    public interface OnLoadMoreListener {
-        void onLoadMore();
-    }
-
     public void setLoaded() {
         loading = false;
     }
 
+    public interface OnLoadMoreListener {
+        void onLoadMore();
+    }
 
     public class RecyclerViewHolders extends RecyclerView.ViewHolder {
         public ImageView displayedImage;

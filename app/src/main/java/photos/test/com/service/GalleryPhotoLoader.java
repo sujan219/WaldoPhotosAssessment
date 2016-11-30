@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.widget.ImageView;
 
@@ -21,6 +20,7 @@ public class GalleryPhotoLoader implements PhotoLoader {
     private List<Integer> cache;
     private Context ctx;
     private boolean fullyLoaded;
+    private static final int LOAD_FACTOR = 15;
 
     GalleryPhotoLoader(Context ctx) {
         photoIdList = new ArrayList<Integer>();
@@ -39,7 +39,6 @@ public class GalleryPhotoLoader implements PhotoLoader {
             cursor.moveToNext();
         }
         cursor.close();
-        //loadMore(null);
     }
 
     @Override
@@ -61,13 +60,13 @@ public class GalleryPhotoLoader implements PhotoLoader {
             @Override
             protected Void doInBackground(Void... params) {
                 try {
-                    Thread.sleep(2500);
+                    Thread.sleep(2500); //to fake the load time
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
                 int len = cache.size();
-                for(int i=len; i<len+15 && i<photoIdList.size(); ++i){
+                for(int i=len; i<len+LOAD_FACTOR && i<photoIdList.size(); ++i){
                     cache.add(photoIdList.get(i));
                 }
 

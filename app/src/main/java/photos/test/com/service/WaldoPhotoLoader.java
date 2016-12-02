@@ -3,7 +3,6 @@ package photos.test.com.service;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -33,10 +32,9 @@ public class WaldoPhotoLoader implements PhotoLoader {
     private ImageLoader imageLoader;
     private int lastSize = 0;
     private DisplayImageOptions imgDisplayOptions = new DisplayImageOptions.Builder()
-            .showImageOnLoading(R.mipmap.ic_launcher)
+            .showImageOnLoading(R.drawable.image)
             .cacheInMemory(true)
             .cacheOnDisk(true)
-            //.imageScaleType(ImageScaleType.EXACT)
             .build();
 
     public WaldoPhotoLoader(Context context) {

@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
-        photoLoader = PhotoLoaderFactory.getPhotoLoader(this);
+        photoLoader = PhotoLoaderFactory.createPhotoLoader(this);
         photoLoader.loadMore(new PhotoLoadListener() {
             @Override
             public void loaded(int lastSize) {

@@ -7,7 +7,7 @@ import android.content.Context;
  */
 
 public class PhotoLoaderFactory {
-    public static PhotoLoader getPhotoLoader(Context ctx){
+    public static PhotoLoader createPhotoLoader(Context ctx){
         return new WaldoPhotoLoader(ctx);
     }
 }

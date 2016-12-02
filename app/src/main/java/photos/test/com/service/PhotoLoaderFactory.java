@@ -8,6 +8,6 @@ import android.content.Context;
 
 public class PhotoLoaderFactory {
     public static PhotoLoader getPhotoLoader(Context ctx){
-        return new GalleryPhotoLoader(ctx);
+        return new WaldoPhotoLoader(ctx);
     }
 }

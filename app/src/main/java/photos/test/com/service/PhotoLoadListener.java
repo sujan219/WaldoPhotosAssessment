@@ -5,5 +5,6 @@ package photos.test.com.service;
  */
 
 public interface PhotoLoadListener {
-    public void loaded();
+    public void loaded(int lastSize);
+    public void loadFailed();
 }

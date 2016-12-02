@@ -33,7 +33,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:23+'
     compile 'com.android.support:design:23+'
-    compile 'com.graphql-java:graphql-java:2.2.0'
-    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.0.0'
+    compile 'com.squareup.okio:okio:1.6.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.0.0'
     testCompile 'junit:junit:4.12'
 }

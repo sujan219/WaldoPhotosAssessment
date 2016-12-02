@@ -79,7 +79,7 @@ public class GalleryPhotoLoader implements PhotoLoader {
             @Override
             protected void onPostExecute(Void aVoid) {
                 if(listener != null) {
-                    listener.loaded();
+                    listener.loaded(cache.size()-LOAD_FACTOR);
                 }
             }
         }.execute();
